@@ -4,12 +4,14 @@ function App() {
   return (
     <div className="App"> 
       {/*Call component*/}
-      <User name="Hyper" age={21} email="hyper@hyper.com"/>
+      {/* <User name="Hyper" age={21} email="hyper@hyper.com"/>
       <User name="Max" age={21} email="max@max.com"/>
 
       <Job salary={90000} position="Senior SDE" company="Amazon" />
       <Job salary={12000} position="Junior SDE" company="Google" />
       <Job salary={10000} position="Project Manager" company="Netflix" />
+     */}
+      <h1 className="name">Hyper</h1>
     </div>
   );
 }
