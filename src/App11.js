@@ -15,14 +15,26 @@ function App() {
     const addTask = () => {
         const task = {
             id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
-            taskName: newTask
+            taskName: newTask,
+            completed: false
         };
-        
+
         setTodoList([...todoList, task]);
     };
 
     const deleteTask = (id) => {
         setTodoList(todoList.filter((task) => task.id !== id));
+    };
+
+    const updateTask = (id) => {
+        setTodoList(todoList.map((task) => {
+            if (task.id === id) {
+                return {...task, completed: true};
+            } else {
+                return task;
+            }
+        }))
+        // numbers.map((number) => number * 2);
     };
 
     return (
@@ -37,7 +49,9 @@ function App() {
                         <Task 
                             taskName={task.taskName} 
                             id={task.id} 
+                            completed={task.completed}
                             deleteTask={deleteTask}
+                            updateTask={updateTask}
                         />
                     );
                 })}
