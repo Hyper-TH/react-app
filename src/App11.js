@@ -27,14 +27,7 @@ function App() {
     };
 
     const updateTask = (id) => {
-        setTodoList(todoList.map((task) => {
-            if (task.id === id) {
-                return {...task, completed: true};
-            } else {
-                return task;
-            }
-        }))
-        // numbers.map((number) => number * 2);
+        setTodoList(todoList.map((task) => { return task.id === id ? {...task, completed: true} : task; }))
     };
 
     return (
